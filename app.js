@@ -5,10 +5,9 @@ const port = 3000
 require('dotenv').config()
 const connectDB = require('./db/connect')
 //middleware
+app.use(express.static('./public'))
 app.use(express.json())
-app.get('/',(req,res)=>{
-    res.send("Hello")
-})
+
 
 app.use('/api/v1/tasks', route)
 
